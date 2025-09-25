@@ -8,14 +8,17 @@
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.1",
+    "@react-email/components": "^0.5.5",
     "dotenv": "^17.2.2",
     "drizzle-orm": "^0.44.5",
     "drizzle-zod": "^0.8.3",
     "hono": "^4.9.8",
+    "resend": "^6.1.0",
     "zod": "^4.1.11"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.4",
+    "@types/react": "19.1.13",
     "drizzle-kit": "^0.31.4",
     "tsx": "^4.20.5",
     "wrangler": "^4.4.0"
