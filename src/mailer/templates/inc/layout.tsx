@@ -38,13 +38,13 @@ export default function Layout({ title, heading, children }: Props) {
 						<Hr />
 						<Section style={lowerSection}>
 							<Text style={cautionText}>
-								Plumpi will never email you and ask you to disclose or verify
+								InspiraBlog will never email you and ask you to disclose or verify
 								your password, credit card, or banking account number.
 							</Text>
 						</Section>
 					</Section>
 					<Text style={footerText}>
-						This message was produced and distributed by Plumpi Events.
+						This message was produced and distributed by InspiraBlog.
 					</Text>
 				</Container>
 			</Body>

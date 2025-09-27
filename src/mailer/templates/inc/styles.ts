@@ -36,3 +36,11 @@ export const verificationSection = {
 export const cautionText = { ...text, margin: "0px" }
 
 export const mainText = { ...text, marginBottom: "14px" }
+
+export const codeText = {
+  ...text,
+  fontWeight: 'bold',
+  fontSize: '36px',
+  margin: '10px 0',
+  textAlign: 'center' as const,
+};
