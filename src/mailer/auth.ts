@@ -1,9 +1,15 @@
 import { type IEMail, sendEmail } from "."
-import { ResetPasswordLinkEmail, VerificationLinkEmail } from "./templates"
+import { ResetPasswordLinkEmail, VerificationLinkEmail, VerificationOTPCodeEmail } from "./templates"
 
 interface ISendLink extends IEMail {
 	to: string | string[]
 	url: string
+}
+
+interface ISendOTP extends IEMail {
+	to: string | string[]
+	otp: string
+	type: "sign-in" | "email-verification" | "forget-password"
 }
 
 export async function sendVerificationEmail(args: ISendLink) {
@@ -18,4 +24,13 @@ export async function sendResetPasswordEmail(args: ISendLink) {
 	const subject = "Reset your Password"
 	const react = ResetPasswordLinkEmail(url)
 	await sendEmail({ ...args, to, subject, react })
+}
+
+export async function sendOTPEmail(args: ISendOTP) {
+	const { to, otp, type } = args
+	const subject = "Verify your email with OTP code"
+	if (type === "email-verification") {
+		const react = VerificationOTPCodeEmail(otp)
+		await sendEmail({ ...args, to, subject, react })
+	}
 }

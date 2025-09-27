@@ -7,7 +7,6 @@
     "APP_NAME": "InspiraBlog",
 		"RESEND_CONTACT_TO_EMAIL": "support@inspirablog.com",
 		"RESEND_FROM": "no-reply@inspirablog.com",
-		"RESEND_API_KEY": "re_96vD8WWk_GhBRJKy6W2oYkKULzxTZG79s",
 		"BETTER_AUTH_URL": "",
 		"GOOGLE_CLIENT_ID": "184227308269-5pkak241m8ol5s3bdh6nn778nrk5marl.apps.googleusercontent.com",
 		"APP_URL": "https://api.inspirablog.dev/v1",
