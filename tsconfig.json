@@ -9,6 +9,10 @@
       "ESNext"
     ],
     "jsx": "react-jsx",
-    "jsxImportSource": "react"
+    "jsxImportSource": "react",
+    "paths": {
+			"~/*": ["./src/*"]
+		},
+		"types": ["./worker-configuration.d.ts"]
   },
 }
