@@ -1,7 +1,7 @@
 import { betterAuth } from "better-auth"
 import { betterAuthOptions } from "~/better-auth/options"
 import { getDatabase } from "~/helpers/db"
-import { sendOTPEmail, sendResetPasswordEmail, sendVerificationEmail } from "~/mailer"
+import { sendOTPVerification, sendResetPasswordEmail, sendVerificationEmail } from "~/mailer"
 
 /**
  * Better Auth Instance
@@ -24,7 +24,7 @@ export const getBetterAuth = async (env: CloudflareBindings) => {
 		},
 		sendVerificationOTP: async ({ email, otp, type }) => {
 			// send OTP email
-			await sendOTPEmail({ ...env, to: email, otp, type })
+			await sendOTPVerification({ ...env, to: email, otp, type })
 		}
 	})
 	return betterAuth({
