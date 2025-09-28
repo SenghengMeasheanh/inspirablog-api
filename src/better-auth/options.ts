@@ -19,7 +19,11 @@ interface Args {
   sendResetPassword?: ({ user, url }: EmailData) => Promise<void>
   sendVerificationEmail?: (data: EmailData, request?: Request) => Promise<void>
   sendVerificationOTP: (
-    data: { email: string; otp: string; type: "sign-in" | "email-verification" | "forget-password" },
+    data: {
+      email: string
+      otp: string
+      type: "sign-in" | "email-verification" | "forget-password"
+    },
     request?: Request
   ) => Promise<void>
 }
