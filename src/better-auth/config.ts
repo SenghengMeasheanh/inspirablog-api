@@ -7,7 +7,7 @@
 import { betterAuth } from "better-auth"
 import dotenv from "dotenv"
 import { getDatabase } from "~/helpers/db"
-import { sendOTPEmail } from "~/mailer"
+import { sendOTPVerification } from "~/mailer"
 import { betterAuthOptions } from "./options"
 
 dotenv.config({ path: [".env", ".dev.vars"] })
@@ -25,7 +25,7 @@ export const auth: ReturnType<typeof betterAuth> = betterAuth(
     secret,
     sendVerificationOTP: async ({ email, otp, type }) => {
       // send OTP email
-      await sendOTPEmail({
+      await sendOTPVerification({
         ...env,
         to: email,
         otp,

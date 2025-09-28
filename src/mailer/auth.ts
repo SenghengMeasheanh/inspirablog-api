@@ -26,11 +26,14 @@ export async function sendResetPasswordEmail(args: ISendLink) {
 	await sendEmail({ ...args, to, subject, react })
 }
 
-export async function sendOTPEmail(args: ISendOTP) {
+export async function sendOTPVerification(args: ISendOTP) {
 	const { to, otp, type } = args
 	const subject = "Verify your email with OTP code"
 	if (type === "email-verification") {
 		const react = VerificationOTPCodeEmail(otp)
+		await sendEmail({ ...args, to, subject, react })
+	} else if (type === "forget-password") {
+		const react = ResetPasswordLinkEmail(otp)
 		await sendEmail({ ...args, to, subject, react })
 	}
 }
