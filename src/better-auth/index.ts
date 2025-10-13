@@ -34,5 +34,5 @@ export const getBetterAuth = async (env: CloudflareBindings) => {
 				generateId: false
 			}
 		}
-	})
+	} as any) // Temporary cast if you cannot control the prompt value, but ideally fix the prompt value in betterAuthOptions
 }
