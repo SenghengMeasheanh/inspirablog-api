@@ -73,6 +73,7 @@ export const betterAuthOptions = (args: Args) => {
               enabled: true,
               clientId: googleClientId,
               clientSecret: googleClientSecret,
+              prompt: "select_account",
               mapProfileToUser: (profile: {
                 given_name: string
                 family_name: string
@@ -90,6 +91,9 @@ export const betterAuthOptions = (args: Args) => {
       admin(),
       bearer(),
       emailOTP({
+        disableSignUp: true,
+        overrideDefaultEmailVerification: true,
+        sendVerificationOnSignUp: true,
         sendVerificationOTP
       })
     ]
